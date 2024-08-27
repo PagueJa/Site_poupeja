@@ -25,9 +25,6 @@ const Navbar = () => {
           <li className={styles.item}>
             <Link to="/categorias">Categorias</Link>
           </li>
-          <li className={styles.item}>
-            <Link to="/historico">Histórico</Link>
-          </li>
         </ul>
         <div className={styles.accountButton}>
           <Link to="/conta" className={styles.accountLink}>
@@ -45,7 +42,7 @@ const Navbar = () => {
         </h2>
       </section>
 
-      <section>
+      <section className={styles.sections}>
         <div className={styles.actionButton}>
           <Link to="/receitas" className={styles.actionLink}>
             <div className={styles.textContainer}>
@@ -75,7 +72,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={styles.actionButton}>
-          <Link to="/receitas" className={styles.actionLink}>
+          <Link to="/historico" className={styles.actionLink}>
             <div className={styles.textContainer}>
               <span className={styles.blueText}>Histórico</span>
             </div>
