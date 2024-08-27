@@ -1,0 +1,136 @@
+.dashboard {
+    background-color: #222831;
+    color: white;
+    padding: 2em;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222831;
+    padding: 1.5em;
+    margin-top: -35px;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; 
+    margin-right: 10px;
+}
+
+.logo_letra {
+    text-decoration: none;
+    color: #FFFF;
+    font-size: 2.8em;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   
+    
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    margin-right: 2em;
+}
+
+.item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+}
+
+.item a:hover {
+    color: #9e8080;
+}
+
+.accountButton {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 0.5em 1.5em;
+}
+
+.accountLink {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.accountLink:hover {
+    color: #555555;
+}
+
+.greeting{
+    margin-top: 20px;
+    font-size: 1.6em;
+    margin-left: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+section {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 20px; 
+}
+
+.actionButton {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1em 2em;
+    text-align: center;
+    width: 20%;
+    height: 80px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-top: 60px; 
+}
+  
+.textContainer {
+    margin-bottom: 10px; 
+    margin-left: -39%;
+    margin-top: -7px;
+}
+  
+.imageContainer {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: -60px;
+    margin-left: 130%;
+}
+  
+.actionImage {
+    width: 70px; 
+}
+  
+.greenText {
+    color: #32CD32;
+    font-weight: bold;
+    font-size: 2.5em; 
+}
+
+.redText {
+    color: #FF0000;
+    font-weight: bold;
+    font-size: 2.5em; 
+}
+
+.blueText {
+    color: #0044D0;
+    font-weight: bold;
+    font-size: 2.5em; 
+}
