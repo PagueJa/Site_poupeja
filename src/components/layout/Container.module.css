@@ -1,5 +1,5 @@
-.container {
-    width: 1200px;
+.container {/* altera o conteiner de todas as paginas, principalmente a largura */
+    width: 1700px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;

@@ -10,5 +10,18 @@ html, body, #root{
   height: 100%;
 }
 
+:root {
+  --blue-500: #42A5F5;
+  --yellow-500: #FFCA28;
+  --green-500: #155a18;
+  --blue-400: #64B5F6;
+  --yellow-400: #FFD54F;
+  --green-400: #81C784;
+  --red-500: #df1515; /* Vermelho principal */
+  --red-400: #FF7B7B; /* Vermelho claro */
+}
+
+
+
 
 

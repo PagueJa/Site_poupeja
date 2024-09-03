@@ -44,7 +44,7 @@ const Navbar = () => {
 
       <section className={styles.sections}>
         <div className={styles.actionButton}>
-          <Link to="/receitas" className={styles.actionLink}>
+          <Link to="/receitas" className={styles.actionLink} style={{ textDecoration: 'none' }}>
             <div className={styles.textContainer}>
               <span className={styles.greenText}>Receitas</span>
             </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={styles.actionButton}>
-          <Link to="/receitas" className={styles.actionLink}>
+          <Link to="/receitas" className={styles.actionLink} style={{ textDecoration: 'none' }}>
             <div className={styles.textContainer}>
               <span className={styles.redText}>Despesas</span>
             </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={styles.actionButton}>
-          <Link to="/historico" className={styles.actionLink}>
+          <Link to="/historico" className={styles.actionLink} style={{ textDecoration: 'none' }}>
             <div className={styles.textContainer}>
               <span className={styles.blueText}>Histórico</span>
             </div>
