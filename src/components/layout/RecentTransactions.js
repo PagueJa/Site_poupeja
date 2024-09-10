@@ -16,13 +16,27 @@ const transactions = [
     date: '18/10/2002',
     category: 'Transporte',
   },
+  {
+    id: 3,
+    title: 'Pizza',
+    amount: -50.00,
+    date: '18/10/2024',
+    category: 'Lazer',
+  },
+  {
+    id: 4,
+    title: 'Salário',
+    amount: 1200.00,
+    date: '18/10/2024',
+    category: 'Trabalho',
+  },
 ];
 
 const RecentTransaction = () => {
   return (
-    <div className='td' style={{ margin: '20px' }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-        <thead >
+    <div className={styles.container}>
+      <table className={styles.table}>
+        <thead>
           <tr>
             <th>Transação</th>
             <th>Sobre</th>
@@ -33,6 +47,7 @@ const RecentTransaction = () => {
         <tbody>
           {transactions.map((transaction) => (
             <tr
+              className={styles.row}
               key={transaction.id}
               style={{
                 backgroundColor: transaction.amount > 0 ? '#d4edda' : '#f8d7da',

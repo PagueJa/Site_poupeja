@@ -40,11 +40,11 @@ const DoughnutChart = ({ receita, despesas }) => {
     }, [receita, despesas]);
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', padding: '20px', borderRadius: '8px', backgroundColor: 'white' }}>
+        <div style={{ display: 'flex', alignItems: 'center', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.4)', padding: '20px', borderRadius: '8px', backgroundColor: 'white'}}>
             <div style={{ width: '200px', height: '200px' }}>
                 <Chart type="doughnut" data={chartData} options={chartOptions} />
             </div>
-            <div style={{ marginLeft: '20px' }}>
+            <div style={{ marginLeft: '40px' }}>
                 <h3 style={{ fontFamily: 'Arial, sans-serif', marginBottom: '20px', fontSize: '30px' }}>Gráfico de gastos</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>

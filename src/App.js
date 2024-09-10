@@ -5,7 +5,8 @@ import Categorias from './components/pages/Categorias';
 import Historico from './components/pages/Historico';
 
 import Container from './components/layout/Container'; // Importa o componente Container
-import Navbar from './components/layout/Navbar'
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
           }
         />
       </Routes>
-      <p>Footer</p>
+      <Footer/>
     </Router>
   );
 }
