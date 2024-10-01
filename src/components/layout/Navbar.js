@@ -1,11 +1,69 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Modal from "react-modal";
+import ReceitasModal from "./../layout/modals/ReceitasModal";
+import DespesasModal from "./../layout/modals/DespesasModal";
+import HistoricoModal from "./../layout/modals/HistoricoModal";
 import styles from "./Navbar.module.css";
 import logo from "../../img/logo.png";
 import receitasIcon from "../../img/receita.png";
 import despesasIcon from "../../img/despesasimg.png";
 import historicoIcon from "../../img/historicoimg.png";
 
+Modal.setAppElement("#root");
+
 const Navbar = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState(null);
+
+  const openModal = (type) => {
+    setModalType(type);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalType(null);
+  };
+
+  // Função que retorna os estilos inline específicos para cada modal
+  const getModalStyles = () => {
+    switch (modalType) {
+      case "receitas":
+        return {
+          content: {
+            width: "70%",
+            maxWidth: "500px",
+            height: "auto",
+            maxHeight: "50vh",
+            margin: "auto",
+          },
+        };
+      case "despesas":
+        return {
+          content: {
+            width: "75%",
+            maxWidth: "600px",
+            height: "auto",
+            maxHeight: "85vh",
+            margin: "auto",
+          },
+        };
+      case "historico":
+        return {
+          content: {
+            width: "80%",
+            maxWidth: "700px",
+            height: "auto",
+            maxHeight: "90vh",
+            margin: "auto",
+          },
+        };
+      default:
+        return {};
+    }
+  };
+
   return (
     <div className={styles.dashboard}>
       <nav className={styles.navbar}>
@@ -44,7 +102,11 @@ const Navbar = () => {
 
       <section className={styles.sections}>
         <div className={styles.actionButton}>
-          <Link to="/receitas" className={styles.actionLink} style={{ textDecoration: 'none' }}>
+          <div
+            onClick={() => openModal("receitas")}
+            className={styles.actionLink}
+            style={{ textDecoration: "none" }}
+          >
             <div className={styles.textContainer}>
               <span className={styles.greenText}>Receitas</span>
             </div>
@@ -55,10 +117,14 @@ const Navbar = () => {
                 className={styles.actionImage}
               />
             </div>
-          </Link>
+          </div>
         </div>
         <div className={styles.actionButton}>
-          <Link to="/receitas" className={styles.actionLink} style={{ textDecoration: 'none' }}>
+          <div
+            onClick={() => openModal("despesas")}
+            className={styles.actionLink}
+            style={{ textDecoration: "none" }}
+          >
             <div className={styles.textContainer}>
               <span className={styles.redText}>Despesas</span>
             </div>
@@ -69,25 +135,43 @@ const Navbar = () => {
                 className={styles.actionImage}
               />
             </div>
-          </Link>
+          </div>
         </div>
         <div className={styles.actionButton}>
-          <Link to="/historico" className={styles.actionLink} style={{ textDecoration: 'none' }}>
+          <div
+            onClick={() => openModal("historico")}
+            className={styles.actionLink}
+            style={{ textDecoration: "none" }}
+          >
             <div className={styles.textContainer}>
               <span className={styles.blueText}>Histórico</span>
             </div>
             <div className={styles.imageContainer}>
               <img
                 src={historicoIcon}
-                alt="Historico"
+                alt="Histórico"
                 className={styles.actionImage}
               />
             </div>
-          </Link>
+          </div>
         </div>
       </section>
+
+      {/* Modal para exibir o conteúdo com base no tipo */}
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Modal de Ações"
+        style={getModalStyles()} // Aplicar estilos inline dinamicamente
+        overlayClassName={styles.modalOverlay}
+      >
+        {modalType === "receitas" && <ReceitasModal closeModal={closeModal} />}
+        {modalType === "despesas" && <DespesasModal closeModal={closeModal} />}
+        {modalType === "historico" && <HistoricoModal closeModal={closeModal} />}
+      </Modal>
     </div>
   );
 };
 
 export default Navbar;
+

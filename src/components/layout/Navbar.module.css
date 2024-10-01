@@ -100,6 +100,10 @@
     margin-top: 60px; 
     
 }
+
+.actionButton a:hover{
+    color: #9e8080;
+}
   
 .textContainer {
     margin-bottom: 10px; 
@@ -136,3 +140,19 @@
     font-weight: bold;
     font-size: 2.5em; 
 }
+
+.modalContent {
+    width: 80%;           /* Largura do modal */
+    max-width: 600px;      /* Largura máxima */
+    height: auto;          /* Altura automática */
+    max-height: 90vh;      /* Altura máxima do modal em 90% da altura da viewport */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+    margin: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;      /* Scroll para quando o conteúdo ultrapassar o tamanho da janela */
+}
+
+
