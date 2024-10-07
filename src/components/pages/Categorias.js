@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../layout/Navbar";
+import Footer from '../layout/Footer';
 
 const Categorias = () => {
   return (
-    <div>Categorias</div>
-  )
-}
+    <>
+      <Navbar />
+      <div>Categorias</div>
+      <Footer/>
+    </>
+  );
+};
 
-export default Categorias
+export default Categorias;

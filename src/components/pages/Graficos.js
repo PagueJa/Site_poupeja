@@ -1,8 +1,15 @@
 import React from 'react'
+import Navbar from "../layout/Navbar";
+import Footer from '../layout/Footer';
 
 const Graficos = () => {
   return (
-    <div>Graficos</div>
+    <>
+      <Navbar />  
+      <div>Graficos</div>
+      <Footer/>
+    </>
+    
   )
 }
 
