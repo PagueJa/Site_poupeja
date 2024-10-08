@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ReceitasModal.module.css';
 
 const ReceitasModal = ({ closeModal }) => {
@@ -7,6 +7,12 @@ const ReceitasModal = ({ closeModal }) => {
     valor: '',
     data: '',
   });
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setIsOpen(true);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,14 +24,12 @@ const ReceitasModal = ({ closeModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica para salvar a receita
     console.log('Receita adicionada:', receita);
-    // Fechar o modal após o envio
     closeModal();
   };
 
   return (
-    <div className={styles.modalContent}>
+    <div className={`${styles.modalContent} ${isOpen ? styles.active : ''}`}>
       <h2>Adicionar Receita</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
@@ -73,4 +77,5 @@ const ReceitasModal = ({ closeModal }) => {
 };
 
 export default ReceitasModal;
+
 

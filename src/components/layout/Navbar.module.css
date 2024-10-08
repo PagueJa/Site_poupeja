@@ -147,7 +147,7 @@
     height: auto;          /* Altura automática */
     max-height: 90vh;      /* Altura máxima do modal em 90% da altura da viewport */
     padding: 20px;
-    background-color: #fff;
+    background-color: #801e1e;
     border-radius: 8px;
     position: relative;
     margin: auto;

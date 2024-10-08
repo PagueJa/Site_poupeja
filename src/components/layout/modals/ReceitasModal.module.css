@@ -1,44 +1,54 @@
 .modalContent {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .formGroup {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  .submitButton {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .closeButton {
-    background-color: #dc3545;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #faf8f8;
+  border-radius: 8px;
+  position: relative;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modalContent.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.submitButton {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.closeButton {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}

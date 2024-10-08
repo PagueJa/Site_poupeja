@@ -28,10 +28,20 @@ const Navbar = () => {
 
   // Função que retorna os estilos inline específicos para cada modal
   const getModalStyles = () => {
+    const baseStyles = {
+      content: {
+        backgroundColor: "rgba(0, 0, 0, 0)", // Fundo invisível
+        border: "none", // Remove a borda para um visual mais limpo
+        padding: 0, // Remove qualquer padding que o modal tenha
+      },
+    };
+  
     switch (modalType) {
       case "receitas":
         return {
+          ...baseStyles,
           content: {
+            ...baseStyles.content,
             width: "70%",
             maxWidth: "500px",
             height: "auto",
@@ -41,17 +51,21 @@ const Navbar = () => {
         };
       case "despesas":
         return {
+          ...baseStyles,
           content: {
+            ...baseStyles.content,
             width: "75%",
             maxWidth: "600px",
             height: "auto",
-            maxHeight: "85vh",
+            maxHeight: "50vh",
             margin: "auto",
           },
         };
       case "historico":
         return {
+          ...baseStyles,
           content: {
+            ...baseStyles.content,
             width: "80%",
             maxWidth: "700px",
             height: "auto",
@@ -60,9 +74,10 @@ const Navbar = () => {
           },
         };
       default:
-        return {};
+        return baseStyles;
     }
   };
+  
 
   return (
     <div className={styles.dashboard}>
