@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Home.module.css";
-import DoughnutChart from "../layout/DoughnutChart";
+import DoughnutChart from "../layout/graphics/DoughnutChart.js";
 import RecentTransactions from "../layout/RecentTransactions.js";
 import Navbar from "../layout/Navbar";
 import Footer from '../layout/Footer';

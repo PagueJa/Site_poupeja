@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './RecentTransactions.module.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const transactions = [
   {
@@ -34,9 +34,9 @@ const transactions = [
 
 const RecentTransaction = () => {
   return (
-    <div className={styles.container}>
-      <table className={styles.table}>
-        <thead>
+    <div className="container my-4 p-4 shadow rounded bg-white" style={{ width: '100%', marginBottom: '50px' }}>
+      <table className="table table-striped table-bordered text-center" style={{ width: '100%', marginTop: '20px' }}>
+        <thead className="table-light">
           <tr>
             <th>Transação</th>
             <th>Sobre</th>
@@ -47,11 +47,8 @@ const RecentTransaction = () => {
         <tbody>
           {transactions.map((transaction) => (
             <tr
-              className={styles.row}
               key={transaction.id}
-              style={{
-                backgroundColor: transaction.amount > 0 ? '#d4edda' : '#f8d7da',
-              }}
+              className={transaction.amount > 0 ? 'table-success' : 'table-danger'}
             >
               <td>{transaction.title}</td>
               <td>{`R$ ${transaction.amount.toFixed(2)}`}</td>
@@ -66,4 +63,6 @@ const RecentTransaction = () => {
 };
 
 export default RecentTransaction;
+
+
 

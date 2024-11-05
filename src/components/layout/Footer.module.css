@@ -1,20 +1,37 @@
-.footer{
+/* Contêiner principal que envolve todo o conteúdo da página */
+.page-container {
+    min-height: 100vh; /* Ocupa toda a altura da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer normal, sem posição fixa */
+.footer {
     background-color: #222831;
     color: #FFF;
     padding: 1em;
     text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px; /* Empurra o footer para o final do contêiner */
 }
 
-.social_list{
+.social_list {
     display: flex;
     justify-content: center;
     list-style-type: none;
+    padding: 0;
+    margin: 0.5em 0; /* Espaçamento entre os ícones sociais e o texto do footer */
 }
 
 .social_list li {
     margin: 0 1em;
 }
 
-.social_list li:hover{
+.social_list li:hover {
     color: #555555;
 }
+
+
