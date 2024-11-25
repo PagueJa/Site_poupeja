@@ -1,0 +1,19 @@
+{
+    "name": "back_end",
+    "version": "1.0.0",
+    "main": "index.ts",
+    "license": "MIT",
+    "dependencies": {
+        "@prisma/client": "^5.22.0",
+        "axios": "^1.7.7",
+        "express": "^4.21.1",
+        "nodemon": "^3.1.7"
+    },
+    "devDependencies": {
+        "@types/axios": "^0.14.4",
+        "@types/express": "^5.0.0",
+        "prisma": "^5.22.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.3"
+    }
+}

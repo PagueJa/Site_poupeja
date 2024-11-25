@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "es6",                          // Versão do JavaScript que você deseja gerar
+      "module": "commonjs",                     // Módulo do sistema a ser utilizado
+      "strict": true,                           // Habilitar verificações de tipo rigorosas
+      "esModuleInterop": true,                  // Habilitar interoperabilidade entre módulos ES e CommonJS
+      "skipLibCheck": true,                     // Ignorar verificação de tipo de arquivos de definição de biblioteca
+      "forceConsistentCasingInFileNames": true // Forçar o uso consistente de maiúsculas e minúsculas nos nomes dos arquivos
+    },
+    "include": ["index.ts", "**/*.ts"],                    // Incluir todos os arquivos TypeScript dentro da pasta "src"
+    "exclude": ["node_modules"]                 // Excluir a pasta "node_modules"
+}
+  
