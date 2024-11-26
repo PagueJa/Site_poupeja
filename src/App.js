@@ -6,46 +6,46 @@ import Historico from './components/pages/Historico';
 import Cadastro from './components/pages/Cadastro'; 
 import Login from './components/pages/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Container from './components/layout/Container'; // Importa o componente Container
-import Footer from './components/layout/Footer';
+import PrivateRoute from './privateRouter';
 
 function App() {
   return (
     <Router>
+
       <Routes>
-        <Route
+    
+        <Route 
           exact
-          path="/" // Nova rota para a tela de login
-          element={<Cadastro />}
-        />
+          path="/"
+          element={<Cadastro />} />
+
         <Route
           exact
           path="/login"
-          element={<Login />}
-        />
+          element={<Login />} />
+
         <Route
           exact
           path="/home"
-          element={<Home />}
-        />
+          element={<PrivateRoute element={Home} />} />
 
         <Route
           exact
           path="/graficos"
-          element={<Graficos />}
-        />
+          element={<PrivateRoute element={Graficos} />} />
+
         <Route
           exact
           path="/categorias"
-          element={<Categorias />}
-        />
+          element={<PrivateRoute element={Categorias} />} />
+
         <Route
           exact
           path="/historico"
-          element={<Historico />}
-        />
+          element={<PrivateRoute element={Historico} />} />
+
       </Routes>
+
     </Router>
   );
 }

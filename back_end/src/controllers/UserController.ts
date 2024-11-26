@@ -32,6 +32,27 @@ class UserController{
 
         }
     }
+
+    async checkLogin(Req: Request, Res: Response) {
+        try {
+
+            const data =  Req.body;
+
+            if (!data.email || !data.password) {
+                return Res.status(400).json({
+                    message: "Email and password are required" });
+            }
+
+            const userCheckData = await userService.checkLogin(data)    
+            return Res.status(200).json(userCheckData);
+    
+
+        } catch(err: any) {
+            return Res.status(400).json({
+                error: err.message});
+
+        }
+    }
 }
 
 export default UserController

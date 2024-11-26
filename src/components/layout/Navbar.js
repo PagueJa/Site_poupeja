@@ -90,7 +90,7 @@ const Navbar = () => {
         </div>
         <ul className={styles.list}>
           <li className={styles.item}>
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li className={styles.item}>
             <Link to="/graficos">Gráficos</Link>

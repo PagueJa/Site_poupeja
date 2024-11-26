@@ -8,6 +8,8 @@ const userController = new UserController();
 router.post('/user/registration', (req, res) => {
     userController.create(req, res);
   });
-router.post('/user/login');
+router.post('/user/login', (req, res) => {
+  userController.checkLogin(req, res);
+});
 
 export default router;
