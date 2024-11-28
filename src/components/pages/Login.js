@@ -22,9 +22,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
-    event.preventDefault();
 
-    console.log("alguma coisa")
+    event.preventDefault();
 
     try {
       const response = await axios.post('http://localhost:5000/user/login', {
@@ -32,32 +31,32 @@ const Login = () => {
         password,
       });
 
-      console.log(response)
-
       const token = response.data.token
 
       if (token) {
-        localStorage.setItem('token', token);
 
-        console.log("Token recebido:", token);
+        localStorage.setItem('token', token);
 
         window.location.href = '/home';
 
       } else {
-        setError("Error obtaining token");
+        setError("Erro ao obter Token");
       }
 
     } catch (err) {
+
       if (err.response) {
+
         const errorMessage = err.response.data.error
-         || "Unknown error";
+         || "Erro Desconhecido";
 
         setError(errorMessage);
 
       } else {
-        setError("Unknown error");
+        setError("Erro Desconhecido");
       }
     }
+
   };
 
   const handleRedirect = () => {

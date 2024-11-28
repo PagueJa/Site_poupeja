@@ -13,6 +13,7 @@ class UserController{
     }
 
     async create(Req: Request, Res: Response) {
+
         try {
 
             const data =  Req.body;
@@ -22,7 +23,8 @@ class UserController{
                     message: "Name, email, and password are required" });
             }
 
-            const userCreatedData = await userService.create(data)    
+            const userCreatedData = await userService.create(data)
+                
             return Res.status(201).json(userCreatedData);
     
 
@@ -31,28 +33,31 @@ class UserController{
                 error: err.message});
 
         }
+
     }
 
     async checkLogin(Req: Request, Res: Response) {
+
         try {
 
             const data =  Req.body;
 
             if (!data.email || !data.password) {
                 return Res.status(400).json({
-                    message: "Email and password are required" });
+                    message: "Email e senha são Obrigatórios" });
             }
 
-            const userCheckData = await userService.checkLogin(data)    
+            const userCheckData = await userService.checkLogin(data)
+
             return Res.status(200).json(userCheckData);
     
 
         } catch(err: any) {
             return Res.status(400).json({
                 error: err.message});
-
         }
     }
+
 }
 
 export default UserController

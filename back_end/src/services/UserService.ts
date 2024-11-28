@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 
 
 class UserService {
+
     constructor( private _userRepository: UserInMemoryRepository | UserPrismaRepository ) {
 
     }
@@ -15,7 +16,6 @@ class UserService {
 
         if (userData){
             throw new Error("This email already exists")
-            
         }
 
         const addUserData = await this._userRepository.create(data)
@@ -25,31 +25,34 @@ class UserService {
     }
 
     async checkLogin(data: Login): Promise<{ token: string }> {
-        // Buscar usuário pelo email
+        
         const user = await this._userRepository.getByEmail(data.email);
 
         if (!user) {
-            throw new Error("Invalid email or password");
+            throw new Error("Email ou senha inválidos");
         }
 
-        // Verificar a senha
         const isPasswordValid = await this._userRepository.isPasswordValid(data.password, user.password);
 
         if (!isPasswordValid) {
-            throw new Error("Invalid email or password");
+            throw new Error("Email ou senha inválidos");
         }
 
-        // Gerar token JWT
         const token = this.generateToken(user);
 
         return { token };
     }
 
     private generateToken(user: User): string {
+
         return jwt.sign(
+
             { id: user.id_user, email: user.email },
-            "SECRET_KEY", // Substitua por uma variável de ambiente
+
+            //TODO: Criar uma chave segura na variável de ambiente 
+            "SECRET_KEY", 
             { expiresIn: "1h" }
+
         );
     }
 }
