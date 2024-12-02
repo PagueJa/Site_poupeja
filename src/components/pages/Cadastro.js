@@ -68,7 +68,7 @@ const Login = () => {
         <div className="login-left">
           <h2>Bem Vindo de Volta!</h2>
           <p>Para continuar conectado conosco, faça login com suas informações pessoais</p>
-          <button className="btn btn-success" onClick={handleRedirect}>ENTRAR</button>
+          <button className="btn btn-login" onClick={handleRedirect}>ENTRAR</button>
         </div>
         
         {/* Coluna Direita (Criar Conta) */}

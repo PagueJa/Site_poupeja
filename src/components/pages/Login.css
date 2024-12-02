@@ -153,5 +153,6 @@
   
   .btn-login:hover {
     background-color: #ffffff; /* Sombra do amarelo para o hover */
+    color: #333333;
   }
   

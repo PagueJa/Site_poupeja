@@ -6,6 +6,7 @@ const DespesasModal = ({ closeModal }) => {
     nome: '',
     valor: '',
     data: '',
+    categoria: '',
   });
 
   const [isOpen, setIsOpen] = useState(false);
@@ -61,6 +62,17 @@ const DespesasModal = ({ closeModal }) => {
             id="data"
             name="data"
             value={despesa.data}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="categoria">Categoria:</label>
+          <input
+            type="text"
+            id="nome"
+            name="categoria"
+            value={despesa.categoria}
             onChange={handleChange}
             required
           />

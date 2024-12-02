@@ -32,6 +32,11 @@
     
 }
 
+.logoContainer a {
+    text-decoration: none; /* Remove a linha azul */
+}
+
+
 .list {
     display: flex;
     list-style: none;
@@ -75,7 +80,7 @@
     margin-top: 20px;
     font-size: 1.6em;
     margin-left: 15px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .sections {
@@ -124,15 +129,16 @@
 }
   
 .imageContainer {
+    width: 30%;
     display: flex;
     justify-content: right;
     align-items: center;
     margin-top: -60px;
-    margin-left: 130%;
+    margin-left: 90%;
 }
   
 .actionImage {
-    width: 70px; 
+    width: 100%; 
 }
   
 .greenText {

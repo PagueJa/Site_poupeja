@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HistoricoModal.module.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const transactions = [
   {
@@ -32,12 +32,12 @@ const transactions = [
   },
 ];
 
-const HistoricoModal = ({ closeModal }) => {
+const RecentTransaction = () => {
   return (
-    <div className={styles.container}>
-      <h1>Histórico</h1>
-      <table className={styles.table}>
-        <thead>
+    <div className="container my-4 p-4 shadow rounded bg-white" style={{ width: '100%', marginBottom: '50px' }}>
+      <h1 style={{ textAlign: 'center'}}>Histórico</h1>
+      <table className="table table-striped table-bordered text-center" style={{ width: '100%', marginTop: '20px' }}>
+        <thead className="table-light">
           <tr>
             <th>Transação</th>
             <th>Sobre</th>
@@ -48,11 +48,8 @@ const HistoricoModal = ({ closeModal }) => {
         <tbody>
           {transactions.map((transaction) => (
             <tr
-              className={styles.row}
               key={transaction.id}
-              style={{
-                backgroundColor: transaction.amount > 0 ? '#d4edda' : '#f8d7da',
-              }}
+              className={transaction.amount > 0 ? 'table-success' : 'table-danger'}
             >
               <td>{transaction.title}</td>
               <td>{`R$ ${transaction.amount.toFixed(2)}`}</td>
@@ -66,4 +63,4 @@ const HistoricoModal = ({ closeModal }) => {
   );
 };
 
-export default HistoricoModal;
+export default RecentTransaction;

@@ -18,8 +18,10 @@ const Home = () => {
           receita={receita}
           despesas={despesas}
         />
-        <h1 className={styles.trasacoes_recentes}>Transações Recentes</h1>
-        <RecentTransactions />
+        <div className={styles.tabela}>
+          <h1 className={styles.trasacoes_recentes}>Transações Recentes</h1>
+          <RecentTransactions />
+        </div>
       </div>
       <Footer/>
     </>

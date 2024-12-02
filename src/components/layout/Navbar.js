@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Modal from "react-modal";
 import ReceitasModal from "./../layout/modals/ReceitasModal";
 import DespesasModal from "./../layout/modals/DespesasModal";
@@ -15,6 +15,7 @@ Modal.setAppElement("#root");
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState(null);
+  const location = useLocation(); // Hook para pegar a localização atual
 
   const openModal = (type) => {
     setModalType(type);
@@ -26,26 +27,25 @@ const Navbar = () => {
     setModalType(null);
   };
 
-  // Função que retorna os estilos inline específicos para cada modal
   const getModalStyles = () => {
     const baseStyles = {
       content: {
-        backgroundColor: "rgba(0, 0, 0, 0)", // Fundo invisível
-        border: "none", // Remove a borda para um visual mais limpo
-        padding: 0, // Remove qualquer padding que o modal tenha
+        backgroundColor: "rgba(0, 0, 0, 0)",
+        border: "none",
+        padding: 0,
       },
     };
-  
+
     switch (modalType) {
       case "receitas":
         return {
           ...baseStyles,
           content: {
             ...baseStyles.content,
-            width: "70%",
-            maxWidth: "500px",
+            width: "75%",
+            maxWidth: "600px",
             height: "auto",
-            maxHeight: "50vh",
+            maxHeight: "60vh",
             margin: "auto",
           },
         };
@@ -57,7 +57,7 @@ const Navbar = () => {
             width: "75%",
             maxWidth: "600px",
             height: "auto",
-            maxHeight: "50vh",
+            maxHeight: "60vh",
             margin: "auto",
           },
         };
@@ -67,7 +67,7 @@ const Navbar = () => {
           content: {
             ...baseStyles.content,
             width: "80%",
-            maxWidth: "700px",
+            maxWidth: "900px",
             height: "auto",
             maxHeight: "90vh",
             margin: "auto",
@@ -77,7 +77,21 @@ const Navbar = () => {
         return baseStyles;
     }
   };
-  
+
+  // Define o texto de saudação com base na rota atual
+  const getGreetingMessage = () => {
+    switch (location.pathname) {
+      case "/graficos":
+        return "Gráficos";
+      case "/categorias":
+        return "Categorias";
+      case "/home":
+      case "/":
+        return "Bem-vindo, Victor! 👋";
+      default:
+        return "Bem-vindo!";
+    }
+  };
 
   return (
     <div className={styles.dashboard}>
@@ -100,19 +114,14 @@ const Navbar = () => {
           </li>
         </ul>
         <div className={styles.accountButton}>
-          <Link to="/conta" className={styles.accountLink}>
+          <Link to="/editarperfil" className={styles.accountLink}>
             Minha conta
           </Link>
         </div>
       </nav>
 
       <section className={styles.greeting}>
-        <h2>
-          Bem-vindo, Victor!{" "}
-          <span role="img" aria-label="wave">
-            👋
-          </span>
-        </h2>
+        <h2 style={{ marginLeft: "16px" }}>{getGreetingMessage()}</h2>
       </section>
 
       <section className={styles.sections}>
@@ -172,12 +181,11 @@ const Navbar = () => {
         </div>
       </section>
 
-      {/* Modal para exibir o conteúdo com base no tipo */}
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         contentLabel="Modal de Ações"
-        style={getModalStyles()} // Aplicar estilos inline dinamicamente
+        style={getModalStyles()}
         overlayClassName={styles.modalOverlay}
       >
         {modalType === "receitas" && <ReceitasModal closeModal={closeModal} />}
@@ -189,4 +197,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

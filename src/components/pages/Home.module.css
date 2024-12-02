@@ -1,14 +1,16 @@
 .container{
     margin-top: 2%;
     width: 100%;
-    height: 70%;
+
 }
 
+
 .trasacoes_recentes{
-    margin-top: 90px;
+    margin-top: 3%;
     margin-left: 50px;
-    
+    font-family: 'Roboto', sans-serif;
 }
+
 
 
 

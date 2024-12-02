@@ -122,6 +122,11 @@
   color: #888;
 }
 
+.btn-login:hover {
+  background-color: #ffffff; /* Sombra do amarelo para o hover */
+  color: #333333;
+}
+
 .btn-success {
   background-color: #222831;
   color: white;
@@ -130,9 +135,11 @@
   border-radius: 20px;
   font-size: 1em;
   cursor: pointer;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .btn-success:hover {
-  background-color: #00897b;
+  background-color: #ffffff;
+  color: #333333;
 }
