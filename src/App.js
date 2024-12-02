@@ -6,6 +6,7 @@ import Historico from "./components/pages/Historico";
 import EditarPerfil from "./components/pages/EditarPerfil";
 import Cadastro from "./components/pages/Cadastro";
 import Login from "./components/pages/Login";
+import Intro from "./components/pages/Intro";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PrivateRoute from "./privateRouter";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -15,7 +16,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Cadastro />} />
+        <Route exact path="/" element={<Intro />} />
+
+        <Route exact path="/cadastro" element={<Cadastro />} />
 
         <Route exact path="/login" element={<Login />} />
 

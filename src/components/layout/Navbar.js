@@ -112,6 +112,9 @@ const Navbar = () => {
           <li className={styles.item}>
             <Link to="/categorias">Categorias</Link>
           </li>
+          <li className={styles.item}>
+            <Link to="/">Sair</Link>
+          </li>
         </ul>
         <div className={styles.accountButton}>
           <Link to="/editarperfil" className={styles.accountLink}>

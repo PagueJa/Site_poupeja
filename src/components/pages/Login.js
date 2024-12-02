@@ -60,7 +60,7 @@ const Login = () => {
   };
 
   const handleRedirect = () => {
-    navigate('/');
+    navigate('/cadastro');
   }
 
   return (
